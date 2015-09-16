@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Anscombe II",
+    "path": "anscombe_II.csv",
+    "type": "matrix",
+    "size": [12, 2],
+    "rowtype": "row",
+    "coltype": "dimension",
+    "value": {
+      "type": "real",
+      "range": [0, 12]
+    }
+  }
+]
