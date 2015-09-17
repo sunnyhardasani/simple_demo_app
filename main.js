@@ -5,7 +5,7 @@
  */
 
 //define the main module having 4 dependencies: d3 (external library), caleydo main, caleydo data, and a header template for a common styling
-define(['d3', '../caleydo_core/main', '../caleydo_core/data', '../wrapper_bootstrap_fontawesome/header'], function (d3, C, data, header) {
+define(['d3', '../caleydo_core/main', '../caleydo_core/data', '../wrapper_bootstrap_fontawesome/header','../caleydo_core/range'], function (d3, C, data, header, ranges) {
   'use strict';
 
   var appHeader = header.create(document.body, {
@@ -22,9 +22,26 @@ define(['d3', '../caleydo_core/main', '../caleydo_core/data', '../wrapper_bootst
      console.log(value);
    });
 
-    console.log(matrix.length);
+    matrix.data(ranges.parse(',0')).then(function (arr) {
+      console.log(arr);
+    });
+
+      matrix.at(1, 1).then(function(value){
+     console.log(value);
+   });
 
 
+ //     matrix.view(ranges.parse(',0')).data().then(function (arr) {
+ //     console.log(arr);
+ //});
+ //matrix.t.data(ranges.parse('0,')).then(function(arr) {
+ //     console.log(arr);
+ //});
+
+
+//      ranges.parse(',0') <=>
+//ranges.range([0,-1],[0,1]) <=>
+//ranges.list(ranges.Range1D.all(), ranges.Range1D.from([0]))
 
 
   }
